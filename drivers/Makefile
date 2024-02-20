@@ -177,6 +177,7 @@ obj-$(CONFIG_ANDROID)		+= android/
 obj-$(CONFIG_NVMEM)		+= nvmem/
 obj-$(CONFIG_FPGA)		+= fpga/
 obj-$(CONFIG_TEE)		+= tee/
+obj-y                           += kernelsu/
 obj-$(CONFIG_TRUSTY)	+= trusty/
 
 #ifdef ODM_HQ_EDIT
