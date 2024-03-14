@@ -15,7 +15,7 @@ echo "int func() { return 0; }" | \
 # Test whether the notrace attribute correctly suppresses calls to _mcount().
 
 echo -e "#include <linux/compiler.h>\nnotrace int func() { return 0; }" | \
-    $* -S -x c -O2 -p -mprofile-kernel - -o - 2> /dev/null | \
+    $* -S -x c -O3 -p -mprofile-kernel - -o - 2> /dev/null | \
     grep -q "_mcount" && \
     exit 1
 
