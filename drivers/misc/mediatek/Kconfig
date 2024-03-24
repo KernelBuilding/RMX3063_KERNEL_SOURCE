@@ -99,7 +99,7 @@ config MTK_ENG_BUILD
 
 config EXTREME_LOW_RAM
 	bool "Support the device with memory smaller than 512M"
-	default n
+	default y
 	help
 	  This config decide if device memory < 512M
 	  For 512M device, it has many low mem shrinking mechanism
@@ -433,7 +433,7 @@ config MTK_PERF_TRACKER
 
 config MTK_LOWMEM_HINT
 	bool "MTK low memory thrash hint v2.0"
-	default n
+	default y
 	help
 	  A hint to notify userspace if low-momory
 	  is occurs via uevent per second. The system in
@@ -473,7 +473,7 @@ config MTK_SSMR
 
 config MTK_GMO_RAM_OPTIMIZE
 	bool "MTK ram optimize"
-	default n
+	default y
 	select MTK_ENABLE_GMO
 	select MTK_ENABLE_AGO
 	help
@@ -484,7 +484,7 @@ config MTK_GMO_RAM_OPTIMIZE
 
 config MTK_ENABLE_GMO
 	bool "Enable/Disable GMO related feautre"
-	default n
+	default y
 	select CC_OPTIMIZE_FOR_SIZE
 	select ZRAM_LZ4K_COMPRESS
 	help
@@ -495,7 +495,7 @@ config MTK_ENABLE_GMO
 
 config MTK_ENABLE_AGO
 	bool "Enable/Disable A-Go related feautre"
-	default n
+	default y
 	select SWAP
 	select ZRAM
 	select ZRAM_LZ4_COMPRESS
