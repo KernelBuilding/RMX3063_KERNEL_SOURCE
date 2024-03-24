@@ -91,10 +91,10 @@ void dvfsrc_opp_level_mapping(void)
 	set_pwrap_cmd(VCORE_OPP_3, 4);
 
 	if (is_vcore_ct) {
-		vcore_opp_0_uv = 800000 - get_vb_volt(VCORE_OPP_0);
-		vcore_opp_1_uv = 700000 - get_vb_volt(VCORE_OPP_1);
-		vcore_opp_2_uv = 700000 - get_vb_volt(VCORE_OPP_2);
-		vcore_opp_3_uv = 650000 + get_vb_volt(VCORE_OPP_3);
+		vcore_opp_0_uv = 850000 - get_vb_volt(VCORE_OPP_0);
+		vcore_opp_1_uv = 750000 - get_vb_volt(VCORE_OPP_1);
+		vcore_opp_2_uv = 750000 - get_vb_volt(VCORE_OPP_2);
+		vcore_opp_3_uv = 700000 + get_vb_volt(VCORE_OPP_3);
 		pr_info("%s: EFUSE vcore_opp_uv: %d, %d, %d, %d\n", __func__,
 				vcore_opp_0_uv,
 				vcore_opp_1_uv,
@@ -102,9 +102,9 @@ void dvfsrc_opp_level_mapping(void)
 				vcore_opp_3_uv);
 
 		if (is_mini_sqc) {
-			vcore_opp_0_uv -= 31250;
-			vcore_opp_1_uv -= 31250;
-			vcore_opp_2_uv -= 31250;
+			vcore_opp_0_uv -= 32250;
+			vcore_opp_1_uv -= 32250;
+			vcore_opp_2_uv -= 32250;
 			vcore_opp_3_uv = min(vcore_opp_2_uv, vcore_opp_3_uv);
 			pr_info("%s: MINI SQC vcore_opp_uv: %d, %d, %d, %d\n",
 					__func__,
@@ -123,11 +123,11 @@ void dvfsrc_opp_level_mapping(void)
 				vcore_opp_2_uv,
 				vcore_opp_3_uv);
 	} else {
-		vcore_opp_0_uv = 800000;
-		vcore_opp_1_uv = 700000;
-		vcore_opp_3_uv = 650000 + get_vb_volt(VCORE_OPP_3);
+		vcore_opp_0_uv = 850000;
+		vcore_opp_1_uv = 750000;
+		vcore_opp_3_uv = 700000 + get_vb_volt(VCORE_OPP_3);
 		/* apply MD VB */
-		vcore_opp_2_uv = 700000 - get_vb_volt(VCORE_OPP_2);
+		vcore_opp_2_uv = 750000 - get_vb_volt(VCORE_OPP_2);
 		vcore_opp_2_uv = max(vcore_opp_2_uv, vcore_opp_3_uv);
 		pr_info("%s: vcore_opp_2: %d uv (MD VB:%d)\n", __func__,
 				vcore_opp_2_uv, get_vb_volt(VCORE_OPP_2));
