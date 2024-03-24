@@ -1,5 +1,7 @@
 CONFIG_CROSS_COMPILE="aarch64-linux-gnu-"
 CONFIG_LOCALVERSION=" - shinobu 胡蝶 - KSU [OC] "
+CONFIG_KERNEL_STRING="Gabut clang 9.0.5 stable x PGYT PROJECT"
+CONFIG_LINUX_COMPILER="Gabut clang 9.0.5 stable x PGYT PROJECT"
 # CONFIG_LOCALVERSION_AUTO is not set
 # CONFIG_FHANDLE is not set
 CONFIG_SCHED_WALT=y
@@ -610,4 +612,3 @@ CONFIG_MODULE_FORCE_UNLOAD=y
 
 # Required by realme to get Wifi working
 CONFIG_BUILD_ARM64_DT_OVERLAY=y
-
